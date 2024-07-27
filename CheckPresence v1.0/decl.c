@@ -13,7 +13,7 @@ void checkPC()
     	displayAndChoice(personne);
 	goto Try;
 }
-void PrintAllList(MachineEtudiant *student)
+void printAllList(MachineEtudiant *student)
 {
 	int choice;
 	char line[200];
@@ -124,9 +124,9 @@ MachineEtudiant* donnee()
         i++;
     }
     fclose(file);
-    Free2D(NOM);
-    Free2D(PRENOM);
-    Free2D(numero);
+    free2D(NOM);
+    free2D(PRENOM);
+    free2D(numero);
     return l1;
 }
 void sent()
@@ -217,7 +217,7 @@ void displayAndChoice(MachineEtudiant *personne)
 		}
 		else if(choice == 3)
 		{
-			PrintAllList(personne);
+			printAllList(personne);
 		}
 		else if(choice == 4)
 		{
@@ -371,7 +371,7 @@ int second_menu()
 	printf("\t=3             Set the list of student who use a personnal computer             =\n");
 	printf("\t=================================================================================\n");
 	printf("\t=================================================================================\n");
-	printf("\t=5                        Quit the spetial menu                                  =\n");
+	printf("\t=5                        Quit the special menu                                  =\n");
 	printf("\t=================================================================================\n");
 	printf("\n What is your choice:");
 	lire = scanf("%d",&choice);
