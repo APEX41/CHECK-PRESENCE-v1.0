@@ -420,7 +420,7 @@ void ecriture(MachineEtudiant *student,int num)
 {
 	FILE *fichier = NULL;
 	char option[20];
-	char Ancienoption[20];
+	char ancienOption[20];
 	int i;
 	fichier = ouvrir(".tmp.html","w+");
 	utilisation util = traitment(student[num].numero);
@@ -450,28 +450,28 @@ void ecriture(MachineEtudiant *student,int num)
 	student[num].Temp = time_en_ce_moment();
 	fprintf(fichier, "\t<CENTER>\n");
 	fprintf(fichier, "\t\t\t<FONT COLOR=\"#FFFFFF\"><b>=====================> %s <======================</b></FONT>\n", __DATE__);
-	fprintf(fichier, "\t\t<TABLe background=\"apex.jpeg\" border=\"4\" bordercolor=\"#8218BC\">\n");
+	fprintf(fichier, "\t\t<TABLe bgColor=\"#333333\" border=\"4\" bordercolor=\"#8218BC\">\n");
 	for(i = 0;i<STUDENT_NUMBER;i++)
 	{
 		if(i == num)
-			fprintf(fichier,  "<TR>\n\t<TD><FONT COLOR=\"#FFFFFF\">%2d</FONT></TD>\n<TD><FONT COLOR=\"#FFFFFF\"><b>%-30s</b></FONT></TD>\n<TD><FONT COLOR=\"#FFFFFF\">%-30s </FONT></TD>\n<FONT COLOR=\"#FFFFFF\"><TD>%-20s </TD></FONT>\n<FONT COLOR=\"#FFFFFF\"><TD>%-20s </TD></FONT>\n<TD><IMG src=\"%s.png\" height=50 width=50></TD>\n</TR>\n", student[i].numero, student[i].nom, student[i].prenom, __DATE__,time_en_ce_moment(),option);
+			fprintf(fichier,  "<TR>\n\t<TD><FONT COLOR=\"red\">%2d</FONT></TD>\n<TD><FONT COLOR=\"yellow\"><b>%-30s</b></FONT></TD>\n<TD><FONT COLOR=\"CYAN\">%-30s </FONT></TD>\n<FONT COLOR=\"CYAN\"><TD>%-20s </TD></FONT>\n<FONT COLOR=\"#F3BB46\"><TD>%-20s </TD></FONT>\n<TD><IMG src=\"%s.png\" height=50 width=50></TD>\n</TR>\n", student[i].numero, student[i].nom, student[i].prenom, __DATE__,time_en_ce_moment(),option);
 		else{
 			switch(student[i].machine)
 			{
 				case (OUI):
-					strcpy(Ancienoption, "OUI");
+					strcpy(ancienOption, "OUI");
 					break;
 				case (NON):
-					strcpy(Ancienoption, "NON");
+					strcpy(ancienOption, "NON");
 					break;
 				case (PERSONNEL):
-					strcpy(Ancienoption, "PC_PERSONNEL");
+					strcpy(ancienOption, "PC_PERSONNEL");
 					break;
 				case (ABSENT):
-					strcpy(Ancienoption, "ABSENT");
+					strcpy(ancienOption, "ABSENT");
 					break;
 			}
-			fprintf(fichier, "<TR>\n\t<TD><FONT COLOR=\"#FFFFFF\">%2d</FONT></TD>\n<TD><FONT COLOR=\"#FFFFFF\"><b>%-30s</b></FONT></TD>\n<TD><FONT COLOR=\"#FFFFFF\">%-30s </FONT></TD>\n<FONT COLOR=\"#FFFFFF\"><TD>%-20s </TD></FONT>\n<FONT COLOR=\"#FFFFFF\"><TD>%-20s </TD></FONT>\n<TD><IMG src=\"%s.png\" height=50 width=50></TD>\n</TR>\n", student[i].numero, student[i].nom, student[i].prenom, __DATE__,student[i].Temp,Ancienoption);
+			fprintf(fichier,  "<TR>\n\t<TD><FONT COLOR=\"red\">%2d</FONT></TD>\n<TD><FONT COLOR=\"yellow\"><b>%-30s</b></FONT></TD>\n<TD><FONT COLOR=\"CYAN\">%-30s </FONT></TD>\n<FONT COLOR=\"CYAN\"><TD>%-20s </TD></FONT>\n<FONT COLOR=\"#F3BB46\"><TD>%-20s </TD></FONT>\n<TD><IMG src=\"%s.png\" height=50 width=50></TD>\n</TR>\n", student[i].numero, student[i].nom, student[i].prenom, __DATE__,time_en_ce_moment(),ancienOption);
 		}
 	}
 	fprintf(fichier, "\t\t<TABLe>\n");
@@ -490,7 +490,7 @@ void confirmation()
 	for(i = 0;i < STUDENT_NUMBER*8+14;i++)
 	{
 		fgets(linetmp,299,tmp);
-		printf("%s\n",linetmp);
+		//printf("%s\n",linetmp);
 		fputs(linetmp,file);
 	}
 	fclose(tmp);
