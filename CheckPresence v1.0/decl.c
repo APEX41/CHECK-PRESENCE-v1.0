@@ -65,9 +65,9 @@ MachineEtudiant* donnee()
 {
     int i = 0;
 	int j;
-    char **NOM = Allouer2D();
-    char **PRENOM = Allouer2D();
-    char **numero = Allouer2D();
+    char **NOM = allouer2D();
+    char **PRENOM = allouer2D();
+    char **numero = allouer2D();
     MachineEtudiant *l1;
     l1 = (MachineEtudiant *)malloc(sizeof(MachineEtudiant) * STUDENT_NUMBER);
     if (l1 == NULL)
