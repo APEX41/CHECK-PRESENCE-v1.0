@@ -13,8 +13,8 @@ enum utilisation
     ABSENT
 };
 void confirmation();
-void Free2D(char **array);
-char **Allouer2D();
+void free2D(char **array);
+char **allouer2D();
 char *time_en_ce_moment();
 typedef enum utilisation utilisation;
 struct MachineEtudiant{
@@ -35,7 +35,7 @@ int Findnumero();           //Rechercher par numero
 void ecriture(MachineEtudiant *eleve,int numero); //Ecriture de donnée dans le fichier
 void displayAndChoice(MachineEtudiant *personne); //Affiche l'interface et recoit le choix de l'Etudiant
 void printresultat();       //Affichage des resultat
-void PrintAllList(MachineEtudiant *student);      //Afficher tous la liste des etudiant
+void printAllList(MachineEtudiant *student);      //Afficher tous la liste des etudiant
 void checkPC();             //Fonction qui relie chaque fonction
 
 utilisation traitment(int numero);  //Utilisation des machine 
