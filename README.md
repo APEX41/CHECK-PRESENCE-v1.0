@@ -4,4 +4,4 @@ or if your PC suddenly stop working so you can do other thing. You don't need to
 
 In both repositories, It's impossible to do multiple check at once
 
-WARNING: if you to download the directory, make sure to download all file within
+WARNING: if you want to download the directory, make sure to download all file within
