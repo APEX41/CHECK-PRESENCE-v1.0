@@ -215,7 +215,7 @@ void writeFile(StudentMachine *student,int num)
 	}
 	fprintf(file, "\t\t</TABLE>\n");
 	fprintf(file, "\t</CENTER><br><br>\n");
-	fprintf(file, "<b>==>Dernier modification :%s\n\t\t%s</b>\n", __DATE__,__TIME__);
+	fprintf(file, "<b>==>Dernier modification :%s\n\t\t%s</b><br><br>\n", __DATE__,__TIME__);
 	fprintf(file, "\t</BODY>\n");
 	fprintf(file, "</HTML>\n");
 	fclose(file);
@@ -228,18 +228,14 @@ void confirmation()
 	char barre[101];
 	FILE *tmp = ouvrir(".tmp.html","a+");
 	FILE *file = ouvrir("check.html","a+");
-	for(i = 0;i < 14;i++)//pour eliminer l'ntete
-	{
-		fgets(tempLine,299,tmp);
-	}
 	memset(barre,' ',STUDENT_NUMBER);
-	for(i = 0;i < STUDENT_NUMBER*8;i++)
+	for(i = 0;i < STUDENT_NUMBER*8 + 15;i++)
 	{
 		fgets(tempLine,299,tmp);
 		fputs(tempLine,file);
 		printf("[");
 		printf("%s]-->[%d/%d]\r",barre,i/8,STUDENT_NUMBER);
-		usleep(10000);
+		usleep(1000);
 		barre[i/8] = '#';
 		fflush(stdout);
 	}
